@@ -9,45 +9,45 @@ odoo.define('pendientesapp.pendientes_widget',function(require){
         search_read
     */
 
-    var TodoAction = AbstractAction.extend({
+    var PendienteAction = AbstractAction.extend({
         template:"pendientes_template",
         events:{
-            "click .btn_add_task":"add_task"
+            "click .btn_add_pendiente":"add_pendiente"
         },
         start:function(){
             this._super()
-            this.fetchTasks()
+            this.fetchPendientes()
         },
         renderTemplate:function(){
 
         },
-        fetchTasks:function(){
-            var list_tasks = $(this.$el).find(".list_tasks")
+        fetchPendientes:function(){
+            var list_pendientes = $(this.$el).find(".list_pendientes")
             this._rpc({
                 model:"pe.pendiente",
                 method:"search_read",
                 args:[],
                 kwargs:{}
-            }).then(function(tasks){
-                _.each(tasks,function(task){
-                    list_tasks.append("<li>"+task.name +"</li>")        
+            }).then(function(pendientes){
+                _.each(pendientes,function(pendiente){
+                    list_pendientes.append("<li>"+pendiente.name +"</li>")  
                 })
             })
         },
-        add_task:function(ev){
+        add_pendiente:function(ev){
             var self = this;
-            var new_task = $(this.$el).find("input[name='task']").val()
-            if(new_task != ""){
+            var new_pendiente = $(this.$el).find("input[name='pendiente']").val()
+            if(new_pendiente != ""){
                 this._rpc({
                     model:"pe.pendiente",
                     method:"create",
-                    args:[{"name":new_task}],
+                    args:[{"name":new_pendiente}],
                     kwargs:{}
                 }).then(function(res){
                     if(res){
-                        var list_tasks = $(self.$el).find(".list_tasks")
-                        list_tasks.append("<li>"+new_task +"</li>")
-                        console.log(new_task)
+                        var list_pendientes = $(self.$el).find(".list_pendientes")
+                        list_pendientes.append("<li>"+new_pendiente +"</li>")
+                        console.log(new_pendiente)
                     }
                 })
                 
@@ -56,9 +56,9 @@ odoo.define('pendientesapp.pendientes_widget',function(require){
             }
         }
     }) 
-    console.log(TodoAction)
+    console.log(PendienteAction)
     
 
-    core.action_registry.add("pendientes_widget",TodoAction)
-    return TodoAction
+    core.action_registry.add("pendientes_widget",PendienteAction)
+    return PendienteAction
 })

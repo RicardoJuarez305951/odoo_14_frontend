@@ -1,0 +1,3 @@
+- Eliminar un pendiente
+- Limpiar campo de pendiente
+- Al dar enter en el textinput, generar el pendiente y limpiar el campo

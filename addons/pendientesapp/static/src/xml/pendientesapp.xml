@@ -2,13 +2,13 @@
 <templates>
     <t t-name="pendientes_template">
         <div style="padding:50px">
-            <label for="task">Nuevo Pendiente</label>
-            <input name="task"/>
-            <button class="btn_add_task">Agregar pendiente</button>
+            <label for="pendiente">Nuevo pendiente</label>
+            <input name="pendiente"/>
+            <button class="btn_add_pendiente">Agregar pendiente</button>
             <br/>
             <br/>
             <h3>Lista de pendientes</h3>
-            <ul class="list_tasks"></ul>
+            <ul class="list_pendientes"></ul>
         </div>
     </t>
 </templates>
