@@ -1,6 +1,6 @@
 {
     "name":"Pendientes App",
     "depends":["web","base"],
-    "data":["assets.xml","views.xml"],
+    "data":["security/ir.model.access.csv","assets.xml","views.xml"],
     "qweb":["static/src/xml/pendientesapp.xml"]
 }
