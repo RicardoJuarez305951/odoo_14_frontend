@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="pendientes_template">
+        <div style="padding:50px">
+            <label for="task">Nuevo Pendiente</label>
+            <input name="task"/>
+            <button class="btn_add_task">Agregar pendiente</button>
+            <br/>
+            <br/>
+            <h3>Lista de pendientes</h3>
+            <ul class="list_tasks"></ul>
+        </div>
+    </t>
+</templates>

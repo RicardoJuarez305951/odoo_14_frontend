@@ -1,0 +1,8 @@
+<odoo>
+    <record id="action_client_pendientes_app" model="ir.actions.client">
+        <field name="name">Pendientes App</field>
+        <field name="tag">pendientes_widget</field>
+    </record>
+
+    <menuitem id="menu_pendientes_app" name ="Pendientes App" action="action_client_pendientes_app" parent=""/>
+</odoo>
