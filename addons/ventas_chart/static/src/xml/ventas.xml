@@ -3,6 +3,9 @@
     <t t-name="template_ventas_chart">
         <div class="mt-5 ml-5">
             <h1>Ventas Chart</h1>
+            <div style="width:400px;height:400px">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
         </div>
     </t>
 </templates>
