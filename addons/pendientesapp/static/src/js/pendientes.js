@@ -8,6 +8,7 @@ odoo.define('pendientesapp.pendientes_widget', function(require) {
         events: {
             "click .btn_add_pendiente": "add_pendiente",
             "click .btn_delete_pendiente": "delete_pendiente",
+            "keydown input[name='pendiente']": 'on_pendiente_keydown'
         },
 
         start: function() {
@@ -68,6 +69,7 @@ odoo.define('pendientesapp.pendientes_widget', function(require) {
                 }).then(function(res) {
                     if (res) {
                         var list_pendientes = $(self.$el).find(".list_pendientes");
+                        $(self.$el).find("input[name='pendiente']").val("");
 
                         var pendiente = {
                             id: res,
@@ -108,7 +110,14 @@ odoo.define('pendientesapp.pendientes_widget', function(require) {
                     console.log("Pendiente eliminado:", pendiente_id);
                 }
             });
-        }
+        },
+
+        on_pendiente_keydown:function(ev){
+            if(ev.key === "Enter"){
+                ev.preventDefault();
+                this.add_pendiente(ev)
+            }
+        },
     });
 
     core.action_registry.add("pendientes_widget", PendienteAction);
