@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="action_client_ventas_chart" model="ir.actions.client">
+        <field name="name">Ventas Chart</field>
+        <field name="tag">ventas_chart</field>
+    </record>
+
+    <menuitem
+        id="menu_ventas_chart"
+        name="Ventas Chart"
+        action="action_client_ventas_chart"
+        parent=""/>
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templates>
+    <t t-name="template_ventas_chart">
+        <div class="mt-5 ml-5">
+            <h1>Ventas Chart</h1>
+        </div>
+    </t>
+</templates>
