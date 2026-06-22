@@ -7,7 +7,7 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Mapa">
                     <label for="map" string="Longitud y Latitud"/>
-                    <field name="map" widget="field_marker_map"/>
+                    <field name="map" widget="field_marker_openmap"/>
                 </page>
             </xpath>
         </field>

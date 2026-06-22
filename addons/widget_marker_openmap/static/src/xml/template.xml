@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="widget_marker_openmap_tmpl.edit">
+        <button class="marker_openmap btn btn-primary">
+            <i class="fa fa-location-arrow"/> Obtener mi ubicacion
+        </button>
+        <div class="openmap" style="width:100%;height:500px;"></div>
+    </t>
+
+    <t t-name="widget_marker_openmap_tmpl.readonly">
+        <span>Latitud: </span><t t-esc="widget.lat"/>
+        <span>Longitud: </span><t t-esc="widget.lng"/>
+        <div class="openmap" style="width:100%;height:500px;"></div>
+    </t>
+
+    <t t-name="widget_marker_openmap_tmpl">
+        <div style="width:100%">
+            <t t-if="widget.mode == 'readonly'">
+                <t t-call="widget_marker_openmap_tmpl.readonly"/>
+            </t>
+            <t t-if="widget.mode == 'edit'">
+                <t t-call="widget_marker_openmap_tmpl.edit"/>
+            </t>
+        </div>
+    </t>
+
+</templates>
