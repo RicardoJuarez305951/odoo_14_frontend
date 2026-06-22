@@ -1,0 +1,54 @@
+<odoo>
+    <template id="snippets" inherit_id="website.snippets" name="Snippets Conversión">
+        <xpath expr="//div[@id='snippet_structure']//t[@t-snippet='website.s_color_blocks_2']" position="after">
+            <t t-snippet="snippet_conversion.template_conversion" t-thumbnail="/snippet_conversion/static/src/img/exchange.png"/>
+        </xpath>
+    </template>
+
+    <template id="snippet_conversion.template_conversion">
+        <section class="s_exchange pt32 pb32">
+            <div>
+                <h2>Conversión de divisas</h2>
+                <p>Convierte entre pesos mexicanos, dólares y euros con tasas actualizadas.</p>
+            </div>
+
+            <div class="s_exchange_form">
+                <label for="currency_from">Desde</label>
+                <select name="currency_from">
+                    <option value="MXN" selected="selected">MXN - Peso mexicano</option>
+                    <option value="USD">USD - Dólar estadounidense</option>
+                    <option value="EUR">EUR - Euro</option>
+                </select>
+
+                <br/>
+
+                <label for="currency_to">Hacia</label>
+                <select name="currency_to">
+                    <option value="USD" selected="selected">USD - Dólar estadounidense</option>
+                    <option value="MXN">MXN - Peso mexicano</option>
+                    <option value="EUR">EUR - Euro</option>
+                </select>
+
+                <br/>
+
+                <label for="amount">Monto</label>
+                <input type="number" name="amount" value="1" min="0" step="0.01"/>
+
+                <br/>
+
+                <strong>Resultado:</strong> <span id="result">0.00</span>
+                <div class="text-muted mt-2" id="exchange_info"></div>
+            </div>
+        </section>
+    </template>
+
+    <template id="snippet_options" inherit_id="website.snippet_options" name="Opciones de Snippet">
+        <xpath expr="." position="inside">
+            <div data-js="SnippetConversion" data-selector=".s_exchange">
+                <we-button data-edit="" data-no-preview="true">
+                    <i class="fa fa-pencil"/> Personalizar
+                </we-button>
+            </div>
+        </xpath>
+    </template>
+</odoo>
